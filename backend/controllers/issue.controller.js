@@ -65,6 +65,7 @@ export const getIssues = async (req, res) => {
         regNo,
         school,
         programme,
+        gender,
         date,
         dateFrom,
         dateTo,
@@ -81,6 +82,7 @@ export const getIssues = async (req, res) => {
       if (name) filter.name = { $regex: name, $options: "i" };
       if (regNo) filter.regNo = regNo;
       if (school) filter.school = school;
+      if (gender) filter.gender = gender;
       if (programme) filter.programme = programme;
       if (assigned === "true") filter.assignedFaculty = { $ne: null };
       if (assigned === "false") filter.assignedFaculty = null;
@@ -131,7 +133,7 @@ export const pickIssue = async (req,res) => {
         const { id } = req.params;
         const facultyId = req.user._id; // from authenticateJWT middleware
 
-        const issue = Issue.findById(id);
+        const issue = await Issue.findById(id);
         if(!issue)
             return res.status(404).json({ message: "Issue not found" });
 
