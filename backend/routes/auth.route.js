@@ -1,6 +1,6 @@
 import express from "express";
 import {body} from "express-validator";
-import {register, login, getCurrentUser} from "../controllers/auth.controller.js";
+import {register, login, getCurrentUser, getFaculties} from "../controllers/auth.controller.js";
 import {authenticateJWT} from "../middlewares/user.middleware.js";
 
 const router = express.Router();
@@ -24,5 +24,7 @@ router.post("/login",
 
 
 router.get("/me", authenticateJWT, getCurrentUser);
+
+router.get("/faculties", getFaculties);
 
 export default router;

@@ -72,3 +72,14 @@ export const getCurrentUser = async (req,res) => {
         return res.status(500).json({ message: "Server error while fetching current user", error: error.message });
     }
 }
+
+// Get all faculties
+export const getFaculties = async (req,res) => {
+    try {
+        const faculties = await User.find({ role: "faculty" }).select("-password");
+        return res.status(200).json({message: "Faculties fetched successfully", faculties});
+
+    } catch (error) {
+        return res.status(500).json({ message: "Server error while fetching faculties", error: error.message });
+    }
+}
