@@ -7,11 +7,11 @@ const issueSchema = new mongoose.Schema({
         required:true,
         trim:true
     },
-    email:{
-        type:String,
-        required:true,
-        trim:true
-    },
+    // email:{
+    //     type:String,
+    //     required:true,
+    //     trim:true
+    // },
     regNo:{
         type:String,
         required:true,
