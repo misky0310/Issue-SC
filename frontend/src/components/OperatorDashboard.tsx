@@ -26,7 +26,7 @@ export default function OperatorDashboard({ user }: OperatorDashboardProps) {
   const [pagination, setPagination] = useState({
     total: 0,
     page: 1,
-    limit: 2,
+    limit: 10,
     totalPages: 0,
   });
 

@@ -155,8 +155,8 @@ export default function RaiseIssueForm({ user, onSuccess }: RaiseIssueFormProps)
               required
             >
               <option value="Indian">Indian</option>
-              <option value="International">NRI</option>
-              <option value="International">Foreign</option>
+              <option value="NRI">NRI</option>
+              <option value="Foreign">Foreign</option>
             </select>
           </div>
 
@@ -186,7 +186,7 @@ export default function RaiseIssueForm({ user, onSuccess }: RaiseIssueFormProps)
               onChange={(e) =>
                 setFormData({ ...formData, assignedFacultyId: e.target.value })
               }
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 text-black border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             >
               <option value="">Unassigned</option>
               {faculties.map((faculty) => (
